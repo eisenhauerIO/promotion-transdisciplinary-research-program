@@ -1,0 +1,27 @@
+figure.figsize: 12, 8
+figure.autolayout: True
+
+font.size: 20
+font.family: sans-serif
+lines.linewidth: 5
+image.cmap: jet
+
+axes.labelsize : 24
+xtick.labelsize : 20
+ytick.labelsize : 20
+
+
+axes.spines.right: False
+axes.spines.left: True
+axes.spines.top: False
+axes.spines.bottom: True
+
+legend.fancybox: True
+legend.frameon: False
+legend.shadow: False
+
+savefig.dpi: 300
+savefig.format: pdf
+
+
+text.latex.preamble: "\usepackage{amsmath}""

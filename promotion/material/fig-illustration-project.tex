@@ -1,0 +1,65 @@
+\begin{tikzpicture}[
+    rounded corners, minimum width=1cm,
+    my triangle/.style={-{Triangle[width=\the\dimexpr2.2\pgflinewidth,length=\the\dimexpr0.8\pgflinewidth]}}]
+
+    % Add nodes.
+    \node[module] (A) {Model};
+    \node[module, right= of  A] (B) {Data};
+    \node[module, right= 2 of  B] (C) {Calibration};
+    \node[module, right= of  C] (D) {Decision};
+    \node[] (title) [align=center, below = 0.6 of C] (ghost) {};
+    \node[] (title) [align=center, above = 0.5 of A] (small-ghost-1) {};
+    \node[] (title) [align=center, above = 0.5 of C] (small-ghost-2) {};
+
+    % Add background boxes.
+    \begin{pgfonlayer}{background}
+        \node[
+        draw=gray!30,
+        fill=gray!7,
+        fit=(A) (B) (C) (D) (ghost) (small-ghost-1) (small-ghost-2),
+        draw,
+        inner sep=10mm,
+        ] (mainbox) {};
+        \node[] (title) [
+        align=center,
+        below = -1 of mainbox,
+        color=black!60
+        ] (title1) {\textbf{Transdisciplinary research portfolio}};
+
+        \node[
+        draw=gray!30,
+        fill=gray!30,
+        fit=(A) (B) (small-ghost-1),
+        draw,
+        inner sep=4mm,
+        minimum height=26mm,
+        ] (box-left) {};
+        \node[] (title) [
+        align=center,
+        above = -.8 of box-left,
+        color=black!80
+        ] (title2) {Domain-specific expertise};
+
+        \node[
+        draw=gray!30,
+        fill=gray!30,
+        fit=(C) (D) (small-ghost-2),
+        draw,
+        inner sep=4mm,
+        minimum height=26mm,
+        ] (box-right) {};
+        \node[] (title) [
+        align=center,
+        above = -.8 of box-right,
+        color=black!80
+        ] (title1) {Transdisciplinary needs};
+    \end{pgfonlayer}
+
+    %Arrows between boxes.
+    \draw[->, draw=black!60] ($(A.east) - (0,0.4)$) to [out=-30,in=-150] ($(B.west) - (0,0.4)$) ;
+    \draw[->, draw=black!60] ($(B.west) + (0,0.4)$) to [out=150,in=30] ($(A.east) + (0,0.4)$);
+    %\draw[->, draw=gray!60, ultra thick] (box-left)--(box-right); %simpler version of arrow
+    \draw[line width=10pt,my triangle, draw=gray!35] (box-left)--(box-right);
+    \draw[->, draw=black!60] (C)--(D.west);
+
+\end{tikzpicture}
