@@ -5,17 +5,18 @@ import pandas as pd
 import seaborn as sns
 
 
-
-
 def plot_as_if_optimization(df_quantities_mean, uncertainty=True):
 
     fig, ax = plt.subplots()
     df_ = df_quantities_mean["subsidy_effect_on_years_by_type"]["difference"]
 
     df_.plot(kind="bar", rot=0, ylim=(0, 2.2), alpha=0.7, label="Point estimate")
-    
+
     if uncertainty:
-        errors = [df_.values - [0.18, 0.1, 0, 0], [0.75, 1.35, 1.237, 1.1748] - df_.values]
+        errors = [
+            df_.values - [0.18, 0.1, 0, 0],
+            [0.75, 1.35, 1.237, 1.1748] - df_.values,
+        ]
         plt.errorbar(
             x=df_.index,
             y=df_.values,
@@ -27,47 +28,41 @@ def plot_as_if_optimization(df_quantities_mean, uncertainty=True):
             label=r"$\Theta_0(0.1)$",
         )
         plt.legend()
-        suffix="-uq"
+        suffix = "-uq"
     else:
-    	suffix=""
+        suffix = ""
 
     ax.set_xticklabels(["Type 1", "Type 2", "Type 3", "Type 4"])
 
     ax.set_ylabel("$\Delta$ Schooling")
     ax.set_xlabel("")
     plt.savefig(f"fig-as-if-optimization{suffix}")
-    
-    
-    
+
+
 def plot_illustration_complexity():
-    
     def increasing(x, a):
         return a * x ** 2
-
 
     def decreasing(x, a, n):
         a = 1
         n = 0.4
         return 1 - (x / a) ** n
 
-
     x = np.linspace(0, 1, 1000)
 
     y_incr = np.apply_along_axis(increasing, 0, x, *[0.5])
     y_decr = np.apply_along_axis(decreasing, 0, x, *[1, 0.4])
-
 
     fig, ax = plt.subplots()
     ax.plot(x, y_incr, label="Uncertainty propagation")
     ax.plot(x, y_decr, ":", label="Model limitations")
     ax.plot(x, y_decr + y_incr, "--", label="Model Error")
 
-
     ax.set_ylim(-0.1, 1)
     ax.legend()
     ax.set_xlabel("Model complexity")
     ax.set_ylabel("Model error")
-    
+
     ax.set_xticks([])
     ax.set_yticks([])
     ax.set_yticklabels([])
@@ -76,6 +71,7 @@ def plot_illustration_complexity():
     fname = "fig-illustration-complexity"
 
     fig.savefig(fname)
+
 
 def clean_results(df):
     """Rename indices and prepare data for plotting."""
@@ -111,7 +107,7 @@ def plot_ranks(df):
 
     """Create rank plot."""
 
-    colors = ["tab:cyan", "tab:olive", "tab:red", "tab:purple"]   
+    colors = ["tab:cyan", "tab:olive", "tab:red", "tab:purple"]
 
     fig, ax = plt.subplots(1)
     ax.spines["bottom"].set_color("white")
@@ -149,16 +145,15 @@ def plot_ranks(df):
 
     plt.savefig("fig-criterion-policy-ranks")
 
+
 if __name__ == "__main__":
 
-   df_quantities_mean = pkl.load(open("qoi-at-mean.pickle", "rb"))
-   df_decisions = pd.read_pickle("df-decisions-0.100.pkl")
-   df_decisions = clean_results(df_decisions)
+    df_quantities_mean = pkl.load(open("qoi-at-mean.pickle", "rb"))
+    df_decisions = pd.read_pickle("df-decisions-0.100.pkl")
+    df_decisions = clean_results(df_decisions)
 
-   sns.set_palette("tab10")
-   plot_illustration_complexity()
-   plot_ranks(df_decisions)
-   for boolean in False, True:
-   	plot_as_if_optimization(df_quantities_mean, uncertainty=boolean)
-
-
+    sns.set_palette("tab10")
+    plot_illustration_complexity()
+    plot_ranks(df_decisions)
+    for boolean in False, True:
+        plot_as_if_optimization(df_quantities_mean, uncertainty=boolean)
