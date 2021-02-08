@@ -70,8 +70,20 @@
 \usepackage{pgf}%,pgfarrows,pgfnodes,pgfshade}
 \usepackage{tikz}
 \usepackage{pgfplots}
-\usetikzlibrary{mindmap, trees, patterns, arrows.meta}
+\usetikzlibrary{mindmap, trees, patterns, arrows.meta, positioning,fit,backgrounds,calc}
 
+\tikzset{
+    module/.style={%
+        draw, rounded corners,
+        minimum width=25mm,
+        minimum height=10mm,
+        fill=white, % filling of node boxes.
+        draw=OSEBlue!40, % color of node boxes.
+        %font=\sffamily
+        },
+    module/.default=2cm,
+    >=LaTeX
+}
 \usepackage{xspace}
 
 % \usepackage{eurosym}
