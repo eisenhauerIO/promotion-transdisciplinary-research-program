@@ -5,12 +5,13 @@ import pandas as pd
 import seaborn as sns
 
 
+
 def plot_as_if_optimization(df_quantities_mean, uncertainty=True):
 
     fig, ax = plt.subplots()
     df_ = df_quantities_mean["subsidy_effect_on_years_by_type"]["difference"]
 
-    df_.plot(kind="bar", rot=0, ylim=(0, 2.2), alpha=0.7, label="Point estimate")
+    df_.plot(kind="bar", rot=0, ylim=(0, 2.2), alpha=0.7, label="Point estimate", ax=ax)
 
     if uncertainty:
         errors = [
@@ -25,17 +26,20 @@ def plot_as_if_optimization(df_quantities_mean, uncertainty=True):
             ecolor="k",
             capsize=8,
             elinewidth=2.5,
-            label=r"$\Theta_0(0.1)$",
+            label="Confidence interval",
         )
-        plt.legend()
         suffix = "-uq"
     else:
         suffix = ""
 
     ax.set_xticklabels(["Type 1", "Type 2", "Type 3", "Type 4"])
 
-    ax.set_ylabel("$\Delta$ Schooling")
+    ax.set_ylabel(r"$\Delta$ Schooling")
     ax.set_xlabel("")
+    ax.set_ylim([0, 2])
+    ax.yaxis.set_ticks([0.5, 1.0, 1.5, 2.0])
+    ax.legend()
+
     plt.savefig(f"fig-as-if-optimization{suffix}")
 
 
@@ -53,24 +57,26 @@ def plot_illustration_complexity():
     y_incr = np.apply_along_axis(increasing, 0, x, *[0.5])
     y_decr = np.apply_along_axis(decreasing, 0, x, *[1, 0.4])
 
-    fig, ax = plt.subplots()
-    ax.plot(x, y_incr, label="Uncertainty propagation")
-    ax.plot(x, y_decr, ":", label="Model limitations")
-    ax.plot(x, y_decr + y_incr, "--", label="Model Error")
+    for ext_ in ["teaser", "full"]:
 
-    ax.set_ylim(-0.1, 1)
-    ax.legend()
-    ax.set_xlabel("Model complexity")
-    ax.set_ylabel("Model error")
+        fig, ax = plt.subplots()
 
-    ax.set_xticks([])
-    ax.set_yticks([])
-    ax.set_yticklabels([])
-    ax.set_xticklabels([])
+        ax.plot(x, y_decr, label="Model features")
+        if ext_ == "full":
+            ax.plot(x, y_incr, label="Uncertainty propagation")
+            ax.plot(x, y_decr + y_incr, label="Model Error")
 
-    fname = "fig-illustration-complexity"
+        ax.set_ylim(-0.1, 1)
+        ax.legend()
+        ax.set_xlabel("Model complexity")
+        ax.set_ylabel("Model error")
 
-    fig.savefig(fname)
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.set_yticklabels([])
+        ax.set_xticklabels([])
+
+        fig.savefig(f"fig-illustration-complexity-{ext_}")
 
 
 def clean_results(df):

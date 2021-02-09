@@ -1,0 +1,22 @@
+name: promotion-transdisciplinary-research-program
+
+channels:
+  - defaults
+  - opensourceeconomics
+  - conda-forge
+
+dependencies:
+  - python=3.8
+  - respy
+  - pandas
+  - numpy
+  - seaborn
+  - jupyterlab
+  - jupyter
+  - pip
+  - pytest-flake8
+  - pip:
+    - black
+    - pdbpp
+    - blackcellmagic
+    - pytest-black
