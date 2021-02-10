@@ -18,8 +18,8 @@
   \end{column}
   \begin{column}{0.3\textwidth}
 	  \begin{figure}[h!]\centering
-	  \vspace{2cm}
-	  \scalebox{0.07}{\includegraphics{../material/source images/TRA.jpg}}
+	  \vspace{0.6cm}
+	  \scalebox{0.15}{\includegraphics{../material/source images/TRA.jpg}}
 	  \end{figure}
   \end{column}
   \begin{column}{0.3\textwidth}
@@ -36,68 +36,57 @@
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
+\begin{frame}{Computational models}\vspace{0.6cm}
 
-\begin{frame}{Structural econometric models}
+  \begin{itemize}\setlength\itemsep{1em}
 
-\begin{itemize}
+  \item \alert<1>{Epidemiologists} guide public mitigation efforts in the current pandemic by predicting the effect of social distancing rules on the disease’s spread.
+  \item \alert<2>{Economists} evaluate alternative welfare programs and forecast their impact on inequality in a variety of economic outcomes.
+  \item \alert<3>{Financial institutions} manage their capital requirements by conducting stress tests about their business viability under adverse market conditions.
 
-  \item Highly parameterized computational models that represent deep structural relationship of theoretical economic models that are invariant
-to policy changes and are estimated to data  \citep{Hood.1953} .
+\end{itemize}\vspace{0.3cm}
+
+\only<4>{\large
+\hspace{0.3cm}$\Rightarrow$\alert<4>{ Uncertainty pervades}}
+
+\end{frame}
+
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{Uncertainty quantification and robust decision-making}\vspace{0.3cm}
+
+  \begin{itemize}\setlength\itemsep{1em}
+  \item \alert<1>{Uncertainty quantification} is a systematic attempt to characterize, manage, and reduce uncertainty.
+  \item \alert<2>{Robust decision-making} seeks to identify potential robust strategies in light of uncertainty, characterize the vulnerabilities of such strategies, and evaluate trade-offs among them.
+\end{itemize}\vspace{0.3cm}
+\pause\pause
+
+\heading{Analysis pipeline}\vspace{0.3cm}
+
+\begin{itemize}\setlength\itemsep{1em}
+	\item \makebox[4cm][l]{\alert<3>{Robust optimization}}
+                \only<3>{
+                        \explanation{
+                                determine robust decisions in frequentist setting\\
+                                use of specialized algorithms                       }
+                }
+	\item \makebox[4cm][l]{\alert<4>{Copula modeling}}
+                \only<4>{
+                        \explanation{
+                                enable sensitivity analysis in Bayesian setting\\
+                                approximate posterior distribution in high dimensions
+                        }
+                }
+	\item \makebox[4cm][l]{\alert<5>{Surrogate modeling}}
+                \only<5>{
+                        \explanation{%
+                                address computational challenges\\
+                                apply techniques from machine learning
+                                						}
+                }
+
 \end{itemize}
 
-
-\begin{multicols}{2}
-  \phantom{test}
-  \columnbreak
-  \heading{Famous examples}\vspace{0.3cm}
-	\begin{itemize}\setlength\itemsep{1em}
-	\item The career decisions of young men
-	\item Optimal replacement of GMC bus engines
-  \item ...
-	\end{itemize}
-\end{multicols}
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-
-\begin{frame}{Structural econometric models}
-
-\begin{multicols}{2}
-	\heading{Motivation}\vspace{0.3cm}
-	\begin{itemize}\setlength\itemsep{1em}
-	\item Facilitate academic rigor
-	\item Study mechanisms
-	\item Predict public policies
-	\end{itemize}
-
-	\pause
-  \break
-  \heading{Uncertainty}\vspace{0.3cm}
-	\begin{itemize}\setlength\itemsep{1em}
-	\item Model specification
-	\item Numerical approximation
-	\item Parameter calibration
-	\end{itemize}
-	\end{multicols}
-\end{frame}
-%---------------------------------------------------------------------------------------------------
-%---------------------------------------------------------------------------------------------------
-\begin{frame}{Incredible certitude}
-
-In economics, however, in practice, use the point estimates as a plug-in for the true parameter and the model is analyzed as-if the true parameters are known \citep{Manski.2019}.
-
-  	\heading{Consequences}\vspace{0.3cm}
-  	\begin{itemize}\setlength\itemsep{1em}
-  	\item fragile findings are accepted as facts
-  	\item dueling certitudes stifle constructive debate
-  	\item knowledge gaps are not identified
-    \item trade-off between model complexity and uncertainties is ignored
-    \item  impossible to identify models used out of their area of reliability
-  	\end{itemize}
-
-\end{frame}
-%---------------------------------------------------------------------------------------------------
-%---------------------------------------------------------------------------------------------------
-\begin{frame}{Transdisciplinary research approach}\centering\vspace{1.3cm}
-	\input{../material/fig-illustration-project}
-\end{frame}

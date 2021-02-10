@@ -64,7 +64,7 @@ def plot_illustration_complexity():
         ax.plot(x, y_decr, label="Model features")
         if ext_ == "full":
             ax.plot(x, y_incr, label="Uncertainty propagation")
-            ax.plot(x, y_decr + y_incr, label="Model Error")
+            ax.plot(x, y_decr + y_incr, label="Model error", linestyle="--")
 
         ax.set_ylim(-0.1, 1)
         ax.legend()

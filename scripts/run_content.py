@@ -15,7 +15,7 @@ def compile_latex_document(dirname=None):
 
     [
         os.system(type_ + " main")
-        for type_ in ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+        for type_ in ["pdflatex", "biber", "pdflatex", "pdflatex"]
     ]
 
     os.chdir(cwd)
