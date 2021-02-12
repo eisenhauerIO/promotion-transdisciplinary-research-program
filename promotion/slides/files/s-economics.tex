@@ -4,7 +4,33 @@
 \section{Economics}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{Human capital}\vspace{0.6cm}
+\begin{frame}{Economics}\vspace{0.4cm}
+
+  \heading{Contributions}
+
+  \begin{multicols}{2}
+
+  	\begin{itemize}\setlength\itemsep{1em}
+  		\item interesting questions
+  		\item administrative data sources
+  	\end{itemize}
+
+  	\begin{itemize}\setlength\itemsep{1em}
+  		\item research codes
+  		\item decision theory
+  	\end{itemize}
+  \end{multicols}
+\pause
+
+\heading{Example}\vspace{0.3cm}
+\begin{itemize}
+\item \textbf{Eisenhauer, Gabler, Janys (2020).} \textit{Structural econometric models for policy-making: Coping with parametric uncertainty}. in preparation for submission.
+\end{itemize}
+
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{Human capital formation}\vspace{0.4cm}
   \begin{columns}
   \begin{column}{0.45\textwidth}
   \begin{figure}[h!]\centering
@@ -25,7 +51,7 @@
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}\frametitle{Eckstein--Keane--Wolpin models}
+\begin{frame}\frametitle{Eckstein--Keane--Wolpin models}\vspace{0.4cm}
 
 \begin{multicols}{2}
 
@@ -37,19 +63,35 @@
 
 	\heading{Predicting effects of policies}\vspace{0.3cm}
 	\begin{itemize}\setlength\itemsep{1em}
+		\item Educational policy
 		\item Welfare programs
-		\item Tax schedules
 	\end{itemize}
-\end{multicols}\vspace{0.3cm}
+\end{multicols}
 
 \pause
-
-\heading{Project}\vspace{0.3cm}
-\begin{itemize}
-\item \textbf{Eisenhauer, Gabler, Janys (2020).} \textit{Structural econometric models for policy-making: Coping with parametric uncertainty}. in preparation for submission.
+\heading{Mathematical framework and implementation}\vspace{0.3cm}
+\begin{itemize}\setlength\itemsep{1em}
+ \item Finite-horizon discrete Markov decision problem
+ \item Backward induction algorithm
 \end{itemize}
 
 \end{frame}
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+	\begin{frame}\frametitle{Community code}
+
+	\vspace{0.3cm}\textbf{\raisebox{-0.04cm}{\includegraphics[height=0.60cm]{../material/crop-respy-logo-bare.pdf}}\hspace{0.05cm} {\Large respy}}\vspace{0.50cm}
+
+	A research code for the flexible specification, simulation, and estimation of Eckstein--Keane--Wolpin models.\\\vspace{0.45cm}
+
+	\includegraphics[width=0.9\textwidth]{../material/crop-respy-engineering.png}\\\vspace{0.50cm}
+
+	\hspace{-0.2cm}\begin{tabular}{ll}
+	\textbf{Core devs} & Tobias Raabe, Janos Gabler\\
+	\textbf{Docs}      & \url{respy.readthedocs.io}
+	\end{tabular}
+
+	\end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
 \begin{frame}{As-if ranking of policy alternatives}\vspace{0.3cm}
