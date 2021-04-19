@@ -4,112 +4,132 @@
 \section{Economics}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{Economics}\vspace{0.4cm}
+\begin{frame}{Contributions}\vspace{0.4cm}
 
-  \heading{Contributions}
-
-  \begin{multicols}{2}
-
-  	\begin{itemize}\setlength\itemsep{1em}
-  		\item interesting questions
-  		\item administrative data sources
-  	\end{itemize}
-
-  	\begin{itemize}\setlength\itemsep{1em}
-  		\item research codes
-  		\item decision theory
-  	\end{itemize}
-  \end{multicols}
-\pause
-
-\heading{Example}\vspace{0.3cm}
-\begin{itemize}
-\item \textbf{Eisenhauer, Gabler, Janys (2020).} \textit{Structural econometric models for policy-making: Coping with parametric uncertainty}. in preparation for submission.
-\end{itemize}
-
-\end{frame}
-%---------------------------------------------------------------------------------------------------
-%---------------------------------------------------------------------------------------------------
-\begin{frame}{Human capital formation}\vspace{0.4cm}
-  \begin{columns}
-  \begin{column}{0.45\textwidth}
-  \begin{figure}[h!]\centering
-	  \scalebox{1.5}{\includegraphics{../material/source images/gary_becker.jpg}}
-	  \hspace{0.5cm}
-	  \scalebox{0.18}{\includegraphics{../material/source images/human_capital.jpg}}
-  \end{figure}
-  \end{column}
-  \begin{column}{0.53\textwidth}
-	\vspace{0.5cm}
-	\begin{itemize}
-	\item[] Human capital comprises the knowledge, skills, competencies and attributes embodied in individuals that facilitate the creation of personal, social, and economic well-being. \\\vspace{0.3cm}
-	- OECD
-	\end{itemize}
-  \end{column}
-
-  \end{columns}
-\end{frame}
-%---------------------------------------------------------------------------------------------------
-%---------------------------------------------------------------------------------------------------
-\begin{frame}\frametitle{Eckstein--Keane--Wolpin models}\vspace{0.4cm}
-
-\begin{multicols}{2}
-
-	\heading{Understanding individual decisions}\vspace{0.3cm}
-	\begin{itemize}\setlength\itemsep{1em}
-		\item Human capital investment
-		\item Consumption--savings decision
-	\end{itemize}
-
-	\heading{Predicting effects of policies}\vspace{0.3cm}
-	\begin{itemize}\setlength\itemsep{1em}
-		\item Educational policy
-		\item Welfare programs
-	\end{itemize}
-\end{multicols}
-
-\pause
-\heading{Mathematical framework and implementation}\vspace{0.3cm}
 \begin{itemize}\setlength\itemsep{1em}
- \item Finite-horizon discrete Markov decision problem
- \item Backward induction algorithm
+  \item interesting questions
+  \item administrative data sources
+  \item research codes
+  \item {\color{red} statistical decision theory}
 \end{itemize}
 
 \end{frame}
-%-------------------------------------------------------------------------------
-%-------------------------------------------------------------------------------
-	\begin{frame}\frametitle{Community code}
-
-	\vspace{0.3cm}\textbf{\raisebox{-0.04cm}{\includegraphics[height=0.60cm]{../material/crop-respy-logo-bare.pdf}}\hspace{0.05cm} {\Large respy}}\vspace{0.50cm}
-
-	A research code for the flexible specification, simulation, and estimation of Eckstein--Keane--Wolpin models.\\\vspace{0.45cm}
-
-	\includegraphics[width=0.9\textwidth]{../material/crop-respy-engineering.png}\\\vspace{0.50cm}
-
-	\hspace{-0.2cm}\begin{tabular}{ll}
-	\textbf{Core devs} & Tobias Raabe, Janos Gabler\\
-	\textbf{Docs}      & \url{respy.readthedocs.io}
-	\end{tabular}
-
-	\end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{As-if ranking of policy alternatives}\vspace{0.3cm}
+\begin{frame}\frametitle{Setup}\vspace{0.3cm}
+
+
+  \heading{Structural econometric model}\vspace{-0.3cm}
+  \begin{align*}
+    \mathbb{R}^n \supset \bTheta \ni \btheta \mapsto  \M(\btheta) = y
+  \end{align*}
+
+  \pause
+  \heading{Notation}
+  \begin{columns}
+  \begin{column}{0.5\textwidth}
+    \begin{align*}\begin{array}{ll}
+    \M & \text{mapping under status-quo} \\[0.5em]
+    \M_g & \text{mapping under policy $g$}  \\[0.5em]
+    \btheta_0 & \text{true parameter} \\[0.5em]
+    \end{array}\end{align*}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    \begin{align*}\begin{array}{ll}
+    y         & \text{counterfactual} \\[0.5em]
+    \hat{\btheta} & \text{estimated parameter} \\[0.5em]
+    \bTheta(\alpha) & \text{confidence set with coverage $1 - \alpha$} \\[0.5em]
+    \end{array}\end{align*}
+  \end{column}
+  \end{columns}
+
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{Comparing models}
   \begin{figure}[h!]\centering
-  \scalebox{0.275}{\includegraphics{fig-as-if-optimization}}
+  \scalebox{0.3}{\includegraphics{fig-illustration-comparison-model-1.pdf}}
   \end{figure}
 \end{frame}\addtocounter{framenumber}{-1}
-
-\begin{frame}{As-if ranking of policy alternatives}\vspace{0.3cm}
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{Comparing models}
   \begin{figure}[h!]\centering
-  \scalebox{0.275}{\includegraphics{fig-as-if-optimization-uq}}
+  \scalebox{0.3}{\includegraphics{fig-illustration-comparison-model-2.pdf}}
+  \end{figure}
+\end{frame}\addtocounter{framenumber}{-1}
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{Comparing models}
+  \begin{figure}[h!]\centering
+  \scalebox{0.3}{\includegraphics{fig-illustration-comparison-model-3.pdf}}
+  \end{figure}
+\end{frame}\addtocounter{framenumber}{-1}
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{Embracing statistical decision theory}\vspace{0.4cm}
+
+  \begin{itemize}\setlength\itemsep{1em}
+  \item promote a well-reasoned and transparent policy process
+  \item clarify trade-off between choices
+  \item examine the coherence of choices
+  \item ease ex-post justification
+  \item facilitate communication of uncertainty
+\end{itemize}\vspace{0.3cm}
+
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{Decision-theoretic framework}\vspace{0.25cm}
+
+
+\heading{As-if decisions with point estimates}\vspace{0.3cm}
+\begin{itemize}
+  \item \only<1-6>{\makebox[0pt][l]{As-if optimization}\phantom{spacespacespacespace}} \only<2-6>{$\quad g^* =\argmax_{g \in \G} U(M_g({\color{red} \hat{\btheta}}))$}
+\end{itemize}\vspace{0.4cm}
+
+\pause\pause
+
+\heading{As-if decisions with set estimates}\vspace{0.3cm}
+\begin{itemize}
+  \item \only<3-6>{\makebox[0pt][l]{Maximin criterion}\phantom{spacespacespacespace}} \only<4-6>{$\quad g^* =\argmax_{g \in \G} \min_{\btheta \in {\color{red} \U(\alpha)}} U(M_g(\btheta))$}
+
+  \item[]
+  \item \only<3-6>{\makebox[0pt][l]{Minimax regret rule}\phantom{spacespacespacespace}} \only<5-6>{$\quad g^* =\argmin_{g \in \G} \max_{\btheta \in {\color{red}\U(\alpha)}} \left[\max_{\tilde{g} \in \G} U(M_{\tilde{g}}(\btheta)) - U(M_g(\btheta)) \right]$}
+
+  \item[]
+  \item \only<3-6>{\makebox[0pt][l]{Subjective Bayes}\phantom{spacespacespacespace}} \only<6>{$\quad g^* =\argmax_{g \in \G} \int_{ {\color{red} \U(\alpha)}} U(M_g({\btheta})) \dd{f(\btheta)}$}
+
+\end{itemize}
+
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{Comparing policies}
+  \begin{figure}[h!]\centering
+  \scalebox{0.3}{\includegraphics{fig-illustration-comparison.pdf}}
   \end{figure}
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{Decision-theoretic criteria}
+\begin{frame}{Comparing policies}
   \begin{figure}[h!]\centering
-  \scalebox{0.3}{\includegraphics{fig-criterion-policy-ranks.pdf}}
+  \scalebox{0.3}{\includegraphics{fig-illustration-comparison-regret.pdf}}
+  \end{figure}
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{Comparing policies}
+  \begin{figure}[h!]\centering
+  \scalebox{0.3}{\includegraphics{fig-illustration-criterion-policy-ranks.pdf}}
+  \end{figure}
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{First steps}\vspace{-1.3cm}
+  \begin{figure}[h!]\centering
+  \subfloat{\scalebox{0.25}{\includegraphics{fig-first-steps-eisenhauer.pdf}}}\hspace{2.0cm}
+  \subfloat{\scalebox{0.25}{\includegraphics{fig-first-steps-blesch.pdf}}}
   \end{figure}
 \end{frame}
 %---------------------------------------------------------------------------------------------------
