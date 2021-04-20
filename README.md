@@ -4,6 +4,8 @@ This repository hosts the presentation that we use to promote our transdisciplin
 
 ## Tags
 
+The compiled presentations for each tags are available in the **tags** folder.
+
 * **v1.0**, TRA assembly
 
 This version of the presentation focused on the application of uncertainty quantification methods for dynamic models of human capital accumulation.
