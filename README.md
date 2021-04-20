@@ -17,3 +17,5 @@ This version emphasizes the use of statistical decision theory after a proper un
 ## Notes
 
 * There are notes collected as part of the **UQ Transdisciplinary** project on **ClickUp**.
+
+[![Continuous Integration](https://github.com/eisenhauerIO/promotion-transdisciplinary-research-program/actions/workflows/ci.yml/badge.svg)](https://github.com/eisenhauerIO/promotion-transdisciplinary-research-program/actions/workflows/ci.yml)
