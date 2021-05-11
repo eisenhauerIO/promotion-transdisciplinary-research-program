@@ -28,7 +28,9 @@
 
 \newcommand{\U}{\mathcal{U}}	%Uniform Distribution
 \newcommand{\G}{\mathcal{G}}
-\newcommand{\dd}  {\mathup{d}}  % Differential d
+% \newcommand{\dd}{\mathup{d}}  % Differential d
+\usepackage{physics}  % Provides, among others, a \dd command for derivatives/differentials
+\renewcommand{\diffd}{\mathup{d}}
 
 \newcommand{\explanation}[1]{%
         \raisebox{0pt}[0pt][0pt]{%
@@ -38,8 +40,19 @@
         }%
 }
 
-
-
+% Shape of \theta
+% Inspired by https://tex.stackexchange.com/questions/251888/slant-character-manually-in-tex-coding -->
+\newcommand{\slanted}[1]{{%
+    \tikz[baseline=(fakeitalic.base), xslant=tan(11.25)]%
+        \node[inner sep=0pt, xslant=tan(11.25)](fakeitalic){#1};%
+}}
+\renewcommand{\thetaLGR}{{%
+    \mathord{\textup{\fontencoding{LGR}\selectfont{\kern-0.075em}\slanted{j}{\kern-0.075em}}}%
+}}
+\renewcommand{\vartheta}{{%
+    \mathord{\textformath{\fontencoding{LGR}\selectfont j}}%
+}}
+% <--
 
 \AtBeginSection[]{{%
 	\setbeamercolor{background canvas}{bg=OSEBlue, fg=white}%
@@ -76,8 +89,8 @@
 
 % OSE colors
 
-\DeclareMathOperator*{\argmin}{arg\,min}
-\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\argmin}{\arg\min}
+\newcommand{\argmax}{\arg\max}
 
 \usepackage{tikz}
 \usetikzlibrary{trees,shapes,arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}

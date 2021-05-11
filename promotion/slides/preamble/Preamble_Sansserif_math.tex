@@ -525,7 +525,7 @@
 		\else%
 			\mathversion{sans}%
 			{\textmd{\(#1\)}}%
-		\fi\relax%	
+		\fi\relax%
 	\else%
 		\mathnormalorig{#1}%
 	\fi\relax%
@@ -581,41 +581,41 @@
 }
 % <==
 
-%% If you would like to redefine \mathup also for the serif font:
-%% ==>
-%\renewcommand{\mathup}[1]{%
-%	\IfInSansMode%
-%		{\textup{%
-%			\InUpModetrue%
-%			\IfInBoldMode%
-%				\mathversion{boldsansup}%
-%				\(#1\)%
-%			\else%
-%				\mathversion{sansup}%
-%				\(#1\)%
-%			\fi\relax%
-%		}}%
-%	\else%
-%		{\textup{%
-%			\InUpModetrue%
-%			\IfInBoldMode%
-%				\mathversion{boldup}%
-%				\(#1\)%
-%			\else%
-%				\mathversion{normalup}%
-%				\(#1\)%
-%			\fi\relax%
-%		}}%
-%	\fi\relax%
-%}
-%\renewcommand{\mathbfup}[1]{%
-%	\IfInSansMode%
-%		{\mathbf{\mathup{#1}}}%
-%	\else%
-%		{\upgreekletters\mathbf{\mathup{#1}}\itgreekletters}%
-%	\fi\relax%
-%}
-%% <==
+% If you would like to redefine \mathup also for the serif font:
+% ==>
+\renewcommand{\mathup}[1]{%
+	\IfInSansMode%
+		{\textup{%
+			\InUpModetrue%
+			\IfInBoldMode%
+				\mathversion{boldsansup}%
+				\(#1\)%
+			\else%
+				\mathversion{sansup}%
+				\(#1\)%
+			\fi\relax%
+		}}%
+	\else%
+		{\textup{%
+			\InUpModetrue%
+			\IfInBoldMode%
+				\mathversion{boldup}%
+				\(#1\)%
+			\else%
+				\mathversion{normalup}%
+				\(#1\)%
+			\fi\relax%
+		}}%
+	\fi\relax%
+}
+\renewcommand{\mathbfup}[1]{%
+	\IfInSansMode%
+		{\mathbf{\mathup{#1}}}%
+	\else%
+		{\upgreekletters\mathbf{\mathup{#1}}\itgreekletters}%
+	\fi\relax%
+}
+% <==
 
 % Make the LaTeX-defined operators obey sansserif math
 % ==>
