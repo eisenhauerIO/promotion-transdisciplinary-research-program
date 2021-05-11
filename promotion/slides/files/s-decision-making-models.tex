@@ -1,13 +1,13 @@
 % !TEX root = ../main.tex
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\section{Statistical decision theory}
+\section{Decision-making with models}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
 \begin{frame}\frametitle{Setup}\vspace{0.3cm}
 
 
-  \heading{Structural econometric model}\vspace{-0.3cm}
+  \heading{Computational model}\vspace{-0.3cm}
   \begin{align*}
     \mathbb{R}^n \supset \bTheta \ni \btheta \mapsto  \M(\btheta) = y
   \end{align*}
@@ -18,7 +18,7 @@
   \begin{column}{0.5\textwidth}
     \begin{align*}\begin{array}{ll}
     \M & \text{mapping under status-quo} \\[0.5em]
-    \M_g & \text{mapping under policy $g$}  \\[0.5em]
+    \M_g & \text{mapping under action $g$}  \\[0.5em]
     \btheta_0 & \text{true parameter} \\[0.5em]
     \end{array}\end{align*}
   \end{column}
@@ -31,24 +31,26 @@
   \end{column}
   \end{columns}
 
+
+\textbf{theta issue}
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{Comparing models}
+\begin{frame}{Comparing actions}
   \begin{figure}[h!]\centering
   \scalebox{0.3}{\includegraphics{fig-illustration-comparison-model-1.pdf}}
   \end{figure}
 \end{frame}\addtocounter{framenumber}{-1}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{Comparing models}
+\begin{frame}{Comparing actions}
   \begin{figure}[h!]\centering
   \scalebox{0.3}{\includegraphics{fig-illustration-comparison-model-2.pdf}}
   \end{figure}
 \end{frame}\addtocounter{framenumber}{-1}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{Comparing models}
+\begin{frame}{Comparing actions}
   \begin{figure}[h!]\centering
   \scalebox{0.3}{\includegraphics{fig-illustration-comparison-model-3.pdf}}
   \end{figure}
@@ -57,11 +59,26 @@
 %---------------------------------------------------------------------------------------------------
 \begin{frame}{Embracing statistical decision theory}\vspace{0.4cm}
 
+  \begin{columns}
+  	\begin{column}{0.55\textwidth}
+
   \begin{itemize}\setlength\itemsep{1em}
-  \item promote a well-reasoned and transparent policy process
-  \item clarify trade-off between alternatives
+  \item promote a well-reasoned and transparent decision-making process
+  \item clarify trade-off between actions
   \item facilitate communication of uncertainty
 \end{itemize}\vspace{0.3cm}
+\end{column}
+
+\begin{column}{0.4\textwidth}
+\begin{figure}
+\includegraphics[scale=0.18]{../material/abraham-wald}
+\caption{Abraham Wald}
+\end{figure}
+\end{column}
+\end{columns}
+
+\only<2>{\large $\Rightarrow$\alert<2>{Conceptually simple, computationally challenging}}
+
 
 \end{frame}
 %---------------------------------------------------------------------------------------------------
@@ -91,23 +108,23 @@
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{Comparing policies}
+\begin{frame}{Comparing actions}
   \begin{figure}[h!]\centering
   \scalebox{0.3}{\includegraphics{fig-illustration-comparison.pdf}}
   \end{figure}
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{Comparing policies}
+\begin{frame}{Comparing actions}
   \begin{figure}[h!]\centering
   \scalebox{0.3}{\includegraphics{fig-illustration-comparison-regret.pdf}}
   \end{figure}
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{Comparing policies}
+\begin{frame}{Comparing actions}
   \begin{figure}[h!]\centering
-  \scalebox{0.3}{\includegraphics{fig-illustration-criterion-policy-ranks.pdf}}
+  \scalebox{0.3}{\includegraphics{fig-illustration-criterion-action-ranking}}
   \end{figure}
 \end{frame}
 %---------------------------------------------------------------------------------------------------

@@ -453,7 +453,7 @@ def plot_ranks_illustration(palette):
             labels=[r"$g_{1}$", r"$g_{2}$"],
         )
 
-    fname = "fig-illustration-criterion-policy-ranks"
+    fname = "fig-illustration-criterion-action-ranking"
     if palette == "binary_r":
         fname += "-bw"
 
