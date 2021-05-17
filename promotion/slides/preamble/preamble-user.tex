@@ -92,9 +92,46 @@
 \newcommand{\argmin}{\arg\min}
 \newcommand{\argmax}{\arg\max}
 
+
+% OSE colors
+\definecolor{lightblue}{RGB}{48, 188, 237}
+\definecolor{semilightblue}{RGB}{24,127,185} 
+\definecolor{mediumblue}{RGB}{12,97,159} 
+\definecolor{semidarkblue}{RGB}{0,76,141} 
+
+
 \usepackage{tikz}
 \usetikzlibrary{trees,shapes,arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
 
 \tikzset{forestyle/.style = {rectangle, thick, minimum width = 5cm, minimum height = 0.5cm, text width = 4.5cm, outer sep = 1mm},
 	pre/.style={<-, shorten <=1pt, >=stealth, ultra thick},
 	extend/.style={<-,dashed, shorten <=1pt, >=stealth, ultra thick}}
+
+
+\usetikzlibrary{decorations.text}
+
+\newcommand*{\mytextstyle}{\normalsize\color{semidarkblue!95}}
+\newcommand{\arcarrow}[3]{%
+   % inner radius, middle radius, outer radius, start angle,
+   % end angle, tip protusion angle, options, text
+   \pgfmathsetmacro{\rin}{1.7}
+   \pgfmathsetmacro{\rmid}{2.2}
+   \pgfmathsetmacro{\rout}{2.7}
+   \pgfmathsetmacro{\astart}{#1}
+   \pgfmathsetmacro{\aend}{#2}
+   \pgfmathsetmacro{\atip}{5}
+   \fill[semilightblue!10, very thick] (\astart+\atip:\rin)
+                         arc (\astart+\atip:\aend:\rin)
+      -- (\aend-\atip:\rmid)
+      -- (\aend:\rout)   arc (\aend:\astart+\atip:\rout)
+      -- (\astart:\rmid) -- cycle;
+   \path[
+      decoration = {
+         text along path,
+         text = {|\mytextstyle|#3},
+         text align = {align = center},
+         raise = -1.0ex
+      },
+      decorate
+   ](\astart+\atip:\rmid) arc (\astart+\atip:\aend+\atip:\rmid);
+}
