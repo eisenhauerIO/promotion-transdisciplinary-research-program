@@ -1,0 +1,40 @@
+ \centering
+ \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=5pt,inner sep=0.5pt},every fit/.style={ellipse,draw,inner sep=18pt}]
+
+\node (data) at (-1,6.2) {Data};
+\node (decisions) at (4,6.2) {Decisions};
+
+\node[] (a1) at (-1,4) {};
+\node[] (a2) at (-1,1) {};
+
+
+\node[] (b1) at (4,4) {};
+\node[] (b2) at (4,1) {};
+
+\node[fill,gray!20,fit= (a1) (a2),minimum width=2cm] {} ;
+\node[fill,gray!20,fit= (b1) (b2),minimum width=2cm] {} ;
+
+\node[draw, gray,fit= (a1) (a2),minimum width=2cm] {} ;
+\node[draw, gray, fit= (b1) (b2),minimum width=2cm] {} ;
+
+
+
+\node[ele] (d0) at (-1,2.5) {};
+
+
+\node[ele, label=right:{\scriptsize $a_1$}] (d1) at (3.5,4) {};
+\node[ele, label=right:{\scriptsize $a_2$}] (d2) at (3.5,2.5) {};
+\node[ele, label=right:{\scriptsize $a_3$}] (d3) at (3.5,1) {};
+
+
+
+  \draw[->,thick,shorten <=2pt,shorten >=2pt] (d0) -- node[label={[xshift=-0.2cm, yshift=-0.35cm]\rotatebox{15}{$\delta_1$}}] {}(d1);
+  \draw[->,thick,shorten <=2pt,shorten >=2pt] (d0) -- node[label={[xshift=0cm, yshift=-0.3cm]{$\delta_2$}}] {}(d2);
+
+
+  \draw[->,thick,shorten <=2pt,shorten >=2pt] (d0) -- node[label={[xshift=0cm, yshift=-0.4cm]\rotatebox{-15}{$\delta_3$}}] {}(d3);
+
+
+ \draw[->,thick,shorten <=2pt,shorten >=2pt] (data) -- node[label={[xshift=0cm, yshift=-0.2cm]\footnotesize{SDFs}}] {}(decisions);
+
+ \end{tikzpicture}

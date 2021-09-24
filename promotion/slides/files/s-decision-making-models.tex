@@ -11,55 +11,49 @@
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}\frametitle{Setup}\vspace{0.3cm}
+\begin{frame}\frametitle{Eckstein--Keane--Wolpin models}
 
+\begin{multicols}{2}
 
-  \heading{Computational model}\vspace{-0.3cm}
-  \begin{align*}
-    \mathbb{R}^n \supset \bTheta \ni \btheta \mapsto  \M(\btheta) = y
-  \end{align*}
+	\heading{Understanding individual decisions}\vspace{0.3cm}
+	\begin{itemize}\setlength\itemsep{1em}
+		\item Human capital investment
+		\item Consumption--savings decision
+	\end{itemize}
 
-  \pause
-  \heading{Notation}
-  \begin{columns}
-  \begin{column}{0.5\textwidth}
-    \begin{align*}\begin{array}{ll}
-    \M & \text{mapping under status-quo} \\[0.5em]
-    \M_g & \text{mapping under action $g$}  \\[0.5em]
-    \btheta_0 & \text{true parameter} \\[0.5em]
-    \end{array}\end{align*}
-  \end{column}
-  \begin{column}{0.5\textwidth}
-    \begin{align*}\begin{array}{ll}
-    y         & \text{quantity of interest} \\[0.5em]
-    \hat{\btheta} & \text{estimated parameter} \\[0.5em]
-    \bTheta(\alpha) & \text{confidence set with coverage $1 - \alpha$} \\[0.5em]
-    \end{array}\end{align*}
-  \end{column}
-  \end{columns}
+	\heading{Predicting effects of policies}\vspace{0.3cm}
+	\begin{itemize}\setlength\itemsep{1em}
+		\item Educational policy
+		\item Welfare programs
+	\end{itemize}
+
+\end{multicols}
+
+\pause
+\heading{Core economic parameters}\vspace{0.3cm}
+\begin{itemize}\setlength\itemsep{1em}
+ \item Time preferences
+ \item Returns to schooling
+ \item Returns to work-experience
+\end{itemize}
 
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{Comparing actions}
-  \begin{figure}[h!]\centering
-  \scalebox{0.3}{\includegraphics{fig-illustration-comparison-model-1.pdf}}
-  \end{figure}
-\end{frame}\addtocounter{framenumber}{-1}
-%---------------------------------------------------------------------------------------------------
-%---------------------------------------------------------------------------------------------------
-\begin{frame}{Comparing actions}
-  \begin{figure}[h!]\centering
-  \scalebox{0.3}{\includegraphics{fig-illustration-comparison-model-2.pdf}}
-  \end{figure}
-\end{frame}\addtocounter{framenumber}{-1}
-%---------------------------------------------------------------------------------------------------
-%---------------------------------------------------------------------------------------------------
-\begin{frame}{Comparing actions}
-  \begin{figure}[h!]\centering
-  \scalebox{0.3}{\includegraphics{fig-illustration-comparison-model-3.pdf}}
-  \end{figure}
-\end{frame}\addtocounter{framenumber}{-1}
+\begin{frame}{As-if analysis}\vspace{0.3cm}
+
+In economics, however, we use the point estimates as a plug-in for the true parameter and the model is analyzed as-if the true parameters are known \citep{Manski.2021}.\vspace{0.3cm}
+\pause
+  	\heading{Consequences}
+    \vspace{0.3cm}
+  	\begin{itemize}\setlength\itemsep{1em}
+  	\item Fragile findings as facts
+  	\item Dueling certitudes stifle constructive debate
+  	\item Knowledge gaps are not identified
+    \item Policy advice not framed as a decision problem under uncertainty
+  	\end{itemize}
+
+\end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
 \begin{frame}{Embracing statistical decision theory}\vspace{0.4cm}
@@ -89,49 +83,65 @@
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{Decision-theoretic framework}\vspace{0.25cm}
+\begin{frame}\frametitle{Basic setup}\vspace{0.3cm}
 
 
-\heading{As-if decisions with point estimates}\vspace{0.3cm}
-\begin{itemize}
-  \item \only<1-6>{\makebox[0pt][l]{As-if optimization}\phantom{spacespacespacespace}} \only<1-6>{$\quad g^* =\argmax_{g \in \G} U(M_g({\color{red} \hat{\btheta}}))$}
-\end{itemize}\vspace{0.4cm}
+  \heading{Consequence function}\vspace{-0.3cm}
+  \begin{align*}
+     c = \rho(a, \theta)
+  \end{align*}
 
-\pause\pause
-
-\heading{As-if decisions with set estimates}\vspace{0.3cm}
-\begin{itemize}
-  \item \only<3-6>{\makebox[0pt][l]{Maximin criterion}\phantom{spacespacespacespace}} \only<4-6>{$\quad g^* =\argmax_{g \in \G} \min_{\btheta \in {\color{red} \U(\alpha)}} U(M_g(\btheta))$}
-
-  \item[]
-  \item \only<3-6>{\makebox[0pt][l]{Minimax regret rule}\phantom{spacespacespacespace}} \only<5-6>{$\quad g^* =\argmin_{g \in \G} \max_{\btheta \in {\color{red}\U(\alpha)}} \left[\max_{\tilde{g} \in \G} U(M_{\tilde{g}}(\btheta)) - U(M_g(\btheta)) \right]$}
-
-  \item[]
-  \item \only<3-6>{\makebox[0pt][l]{Subjective Bayes}\phantom{spacespacespacespace}} \only<6>{$\quad g^* =\argmax_{g \in \G} \int_{ {\color{red} \U(\alpha)}} U(M_g({\btheta})) \dd{f(\btheta)}$}
-
-\end{itemize}
+  \pause
+  \heading{Notation}
+  \begin{columns}
+  \begin{column}{0.5\textwidth}
+    \begin{align*}\begin{array}{ll}
+    \theta \in \Theta & \text{parameters}\\[0.5em]
+    c \in C & \text{consequence} \\[0.5em]
+    a \in A & \text{action}  \\[0.5em]
+    \end{array}\end{align*}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    \begin{align*}\begin{array}{ll}
+      \psi \in\Psi & \text{sample data} \\[0.5em]
+      \delta \in \Gamma     & \text{decision function}  \\[0.5em]
+    P_\theta & \text{sampling distribution} \\[0.5em]
+    \end{array}\end{align*}
+  \end{column}
+  \end{columns}
 
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{Comparing actions}
-  \begin{figure}[h!]\centering
-  \scalebox{0.3}{\includegraphics{fig-illustration-comparison.pdf}}
-  \end{figure}
+\begin{frame}{Statistical decision functions}\vspace{0.3cm}
+
+\begin{figure}[h!]\centering
+\scalebox{0.75}{\input{../material/fig-sdf-rmdp.tex}}
+\end{figure}
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{Comparing actions}
-  \begin{figure}[h!]\centering
-  \scalebox{0.3}{\includegraphics{fig-illustration-comparison-regret.pdf}}
-  \end{figure}
+\begin{frame}{Comparing actions}\vspace{0.4cm}
+\citet{Wald.1950} suggests measuring the performance of $\delta$ at all possible parametrizations $\theta$ by computing the expected utility with respect to its induced sampling distribution $P_\theta$:
+
+\begin{align*}
+    \E_{\theta}\left[u\left(\rho(\delta(\psi), \theta)\right)\right] = \int_\Psi u\left(\rho(\delta(\psi), \theta)\right) d P_{\theta}(\psi).
+\end{align*}
+
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
-\begin{frame}{Comparing actions}
-  \begin{figure}[h!]\centering
-  \scalebox{0.3}{\includegraphics{fig-illustration-criterion-action-ranking}}
-  \end{figure}
+\begin{frame}{Decision-theoretic criteria}\vspace{0.6cm}
+
+
+  \begin{itemize}
+    \item \makebox[0pt][l]{Maximin}\phantom{spacespacespacespace} $\quad \delta^*= \argmax_{\delta \in \Gamma } \min_{\theta\in \Theta} \E_{\theta}\left[u(\rho\left(\delta(\psi), \theta\right))\right]$
+    \item []
+    \item \makebox[0pt][l]{Minimax regret}\phantom{spacespacespacespace} $\quad \delta^* =  \argmin_{\delta \in \Gamma } \max_{\theta\in \Theta}   \underbrace{\left[\max_{a \in A}  u(\rho\left(a, \theta\right))  - \E_{\theta}\left[u(\rho\left(\delta(\psi), \theta\right)) \right]\right]}_{\text{regret}}$
+    \item []
+    \item \makebox[0pt][l]{Subjective Bayes}\phantom{spspacespacespacespace} $\delta^* = \argmax_{\delta \in \Gamma }  \int_{\theta} \E_{\theta}\left[u(\rho\left(\delta(\psi), \theta\right))\right]df_{\theta}$
+  \end{itemize}
+
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------
